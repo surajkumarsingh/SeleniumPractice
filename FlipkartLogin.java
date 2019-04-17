@@ -109,18 +109,15 @@ public class FlipkartLogin {
 	
 		List<WebElement> otpl = driver.findElements(By.xpath("//div[@class='_1jvRms']//input"));
 		System.out.println(otpl.size());
-		
+					
 		for (int i = 0; i < otpl.size(); i++) {
-			
-			for (int j = 0; j < otp.length(); j++) {
 				
-				System.out.print(otp.charAt(j));
+				System.out.print(otp.charAt(i));
 				
-				char c = otp.charAt(j);
+				char c = otp.charAt(i);
 				
 				 s = String.valueOf(c);	
+				 otpl.get(i).sendKeys(s);
 			}
-			otpl.get(i).sendKeys(s);
-		}
 	}
 }
